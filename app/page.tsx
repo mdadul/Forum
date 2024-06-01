@@ -1,7 +1,11 @@
+import PostCard from "@/components/brand/post";
+
 export default function Home() {
   return (
-    <h1>
-      Welcome To Forum App
-    </h1>
+    <div className="max-w-6xl mx-auto py-5 flex gap-4 flex-col">
+      <PostCard />
+      <PostCard />
+      <PostCard />
+    </div>
   );
 }
