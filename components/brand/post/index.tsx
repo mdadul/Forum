@@ -16,9 +16,14 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer";
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "@/components/ui/hover-card";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { PostWithComments } from "@/types";
-import { MessageCircle, User2 } from "lucide-react";
+import { Chrome, PhoneCallIcon, User2 } from "lucide-react";
 import React from "react";
 
 export default function PostCard({ post }: { post: PostWithComments }) {
@@ -32,7 +37,23 @@ export default function PostCard({ post }: { post: PostWithComments }) {
     <div className="border p-3 rounded-lg bg-white" key={post.id}>
       <div className="flex gap-2 items-center">
         <User2 className="size-8 border rounded-full p-1" />
-        <h4 className="font-semibold text-sm ">{post.user.name}</h4>
+        <HoverCard>
+          <HoverCardTrigger>
+            <h4 className="font-semibold text-sm ">{post.user.name}</h4>
+          </HoverCardTrigger>
+          <HoverCardContent>
+            <div className="space-y-1">
+              <p className="text-sm font-medium">{post.user.email}</p>
+              <p className="text-sm inline-flex gap-2">
+                <PhoneCallIcon className="size-4" /> {post.user.phone}
+              </p>
+              <p className="text-sm inline-flex gap-2 items-center text-primary">
+                <Chrome className="size-4" />
+                {post.user.website}
+              </p>
+            </div>
+          </HoverCardContent>
+        </HoverCard>
       </div>
 
       <div className="p-2">
@@ -58,7 +79,6 @@ export default function PostCard({ post }: { post: PostWithComments }) {
       </div>
 
       <div className="hidden md:flex gap-1 items-center justify-end text-primary hover:underline cursor-pointer">
-      
         <Dialog>
           <DialogTrigger>{post.comments.length + " comments"}</DialogTrigger>
           <DialogContent>
