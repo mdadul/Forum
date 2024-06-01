@@ -19,8 +19,12 @@ export default async function Home() {
     return { ...post, comments: commentsForPost };
   });
 
+  postsWithComments.sort((a: PostWithComments, b: PostWithComments) => {
+    return b.id - a.id;
+  });
+
   return (
-    <div className="max-w-3xl mx-auto py-12 flex gap-2 flex-col">
+    <div className="max-w-3xl mx-auto py-12 px-2 flex gap-2 flex-col">
       {postsWithComments.map((post: PostWithComments) => (
         <PostCard post={post} key={post.id} />
       ))}
