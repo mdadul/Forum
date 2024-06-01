@@ -1,11 +1,12 @@
 "use client";
 
+import { Chrome, PhoneCallIcon, User2 } from "lucide-react";
 import React, { useState } from "react";
 
 import { PostWithComments } from "@/types";
-import { Chrome, PhoneCallIcon, User2 } from "lucide-react";
-import UserInfoHoverCard from "../user/hover-card";
+
 import { Comments } from "../comments";
+import UserInfoHoverCard from "../user/hover-card";
 
 export default function PostCard({ post }: { post: PostWithComments }) {
   const [showFull, setShowFull] = useState(false);

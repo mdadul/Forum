@@ -1,10 +1,11 @@
+import { Chrome, PhoneCallIcon } from "lucide-react";
+
 import {
   HoverCard,
   HoverCardContent,
   HoverCardTrigger,
 } from "@/components/ui/hover-card";
 import { User } from "@/types";
-import { Chrome, PhoneCallIcon } from "lucide-react";
 
 export default function UserInfoHoverCard({ user }: { user: User }) {
   return (
