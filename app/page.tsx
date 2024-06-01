@@ -21,7 +21,7 @@ export default async function Home() {
   });
 
   return (
-    <div className="max-w-6xl mx-auto py-12 flex gap-4 flex-col">
+    <div className="max-w-6xl mx-auto py-12 px-4 md:px-1 flex gap-4 flex-col">
       {postsWithComments.map((post: PostWithComments) => (
         <PostCard post={post} key={post.id} />
       ))}
