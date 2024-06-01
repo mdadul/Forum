@@ -95,7 +95,7 @@ export default function PostCard({ post }: { post: PostWithComments }) {
       <div className="md:hidden flex gap-1 items-center justify-end text-primary hover:underline cursor-pointer">
         <Drawer>
           <DrawerTrigger>{post.comments.length + " Comments"} </DrawerTrigger>
-          <DrawerContent>
+          <DrawerContent className="bg-muted">
             <DrawerHeader>
               <DrawerTitle>
                 Comments for post: {post.title.slice(0, 30)}...
@@ -105,11 +105,11 @@ export default function PostCard({ post }: { post: PostWithComments }) {
               </DrawerDescription>
             </DrawerHeader>
             <ScrollArea className="h-[calc(90vh-8rem)] pb-6">
-              <div className="flex flex-col gap-2 px-4 ">
+              <div className="flex flex-col gap-2 px-4">
                 {post.comments.map((comment) => (
                   <div
                     key={comment.id}
-                    className="flex flex-col gap-4 border hover:shadow-md p-2 rounded-lg"
+                    className="flex flex-col gap-4 border bg-white hover:shadow-md p-2 rounded-lg"
                   >
                     <div className="flex gap-2 items-center">
                       <User2 className="size-8 border rounded-full p-1" />
