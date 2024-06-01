@@ -1,7 +1,6 @@
 import PostCard from "@/components/brand/post";
 import { getComment, getPosts, getUsers } from "@/lib/fetchData";
 import { Comment, Post, PostWithComments, PostWithUser, User } from "@/types";
-import { MessageCircle, User2 } from "lucide-react";
 
 export default async function Home() {
   const posts = await getPosts();
